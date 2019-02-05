@@ -1,0 +1,116 @@
+1 Hadoop.
+
+Apache Hadoop is an open source, Scalable, and Fault tolerant framework written in Java. It efficiently processes large volumes of data on a cluster of commodity hardware. Hadoop is not only a storage system but is a platform for large data storage as well as processing.
+
+It provides an efficient framework for running jobs on multiple nodes of clusters. Cluster means a group of systems connected via LAN. Apache Hadoop provides parallel processing of data as it works on multiple machines simultaneously.
+
+2. What is Hadoop Technology?
+]
+Big Data and Hadoop efficiently processes large volumes of data on a cluster of commodity hardware. Hadoop is for processing huge volume of data. Commodity hardware is the low-end hardware, they are cheap devices which are very economical. Hence, Hadoop is very economic.
+
+Hadoop consists of three key parts –
+
+Hadoop Distributed File System (HDFS) – It is the storage layer of Hadoop.
+Map-Reduce – It is the data processing layer of Hadoop.
+YARN – It is the resource management layer of Hadoop.
+
+3. Why Hadoop?
+
+It is scalable (as we can add more nodes on the fly), Fault tolerant (Even if nodes go down, data processed by another node).
+
+Following characteristics of Hadoop make it a unique platform:
+
+1 Flexibility to store and mine any type of data whether it is structured, semi-structured or unstructured. It is not bounded by a single schema.
+2 Excels at processing data of complex nature. Its scale-out architecture divides workloads across many nodes. Another added advantage is that its flexible file-system eliminates ETL bottlenecks.
+Scales economically, as discussed it can deploy on commodity hardware. Apart from this its open-source nature guards against vendor lock.
+
+4. What is Hadoop Architecture?
+
+Hadoop works in master-slave fashion. There is a master node and there are n numbers of slave nodes where n can be 1000s. Master manages, maintains and monitors the slaves while slaves are the actual worker nodes. In Hadoop architecture, the Master should deploy on good configuration hardware, not just commodity hardware. As it is the centerpiece of Hadoop cluster.
+
+Master stores the metadata (data about data) while slaves are the nodes which store the data. Distributedly data stores in the cluster. The client connects with master node to perform any task. Now in this Hadoop for beginners tutorial.
+
+5. Hadoop Components
+5.1. What is HDFS?
+In Hadoop Architecture on the master node, a daemon called namenode run for HDFS. On all the slaves a daemon called datanode run for HDFS. Hence slaves are also called as datanode. Namenode stores meta-data and manages the datanodes. On the other hand, Datanodes stores the data and do the actual task.
+
+HDFS is a highly fault tolerant, distributed, reliable and scalable file system for data storage. 
+
+HDFS is developed to handle huge volumes of data. The file size expected is in the range of GBs to TBs. A file is split up into blocks (default 128 MB) and stored distributedly across multiple machines. These blocks replicate as per the replication factor. After replication, it stored at different nodes. This handles the failure of a node in the cluster. So if there is a file of 640 MB, it breaks down into 5 blocks of 128 MB each (if we use the default value).
+
+Feature of HDFS
+ Hadoop Distributed File System(HDFS) is the world’s most reliable storage system, which can store a large quantity of structured as well as unstructured data. HDFS provides reliable storage of data with its unique feature of Data Replication. HDFS is highly fault-tolerant, reliable, available, scalable, distributed file system. 
+
+Fault Tolerance
+Fault tolerance in HDFS refers to the working strength of a system in unfavorable conditions and how that system can handle such situations. HDFS is highly fault-tolerant, in HDFS data is divided into blocks and multiple copies of blocks are created on different machines in the cluster (this replica creation is configurable). 
+
+High Availability
+HDFS is a highly available file system, data gets replicated among the nodes in the HDFS cluster by creating a replica of the blocks on the other slaves present in HDFS cluster. Hence whenever a user wants to access this data, they can access their data from the slaves which contains its blocks and which is available on the nearest node in the cluster
+
+Data Reliability
+HDFS is a distributed file system which provides reliable data storage. HDFS can store data in the range of 100s of petabytes. It also stores data reliably on a cluster of nodes. HDFS divides the data into blocks and these blocks are stored on nodes present in HDFS cluster. It stores data reliably by creating a replica of each and every block present on the nodes present in the cluster and hence provides fault tolerance facility.
+
+Replication
+Data Replication is one of the most important and unique features of Hadoop HDFS. In HDFS replication of data is done to solve the problem of data loss in unfavorable conditions like crashing of a node, hardware failure, and so on. Since data is replicated across a number of machines in the cluster by creating blocks. The process of replication is maintained at regular intervals of time by HDFS and HDFS keeps creating replicas of user data on different machines present in the cluster.
+
+Scalability
+As HDFS stores data on multiple nodes in the cluster, when requirements increase we can scale the cluster. There is two scalability mechanism available: Vertical scalability – add more resources (CPU, Memory, Disk) on the existing nodes of the cluster. Another way is horizontal scalability – Add more machines in the cluster. The horizontal way is preferred since we can scale the cluster from 10s of nodes to 100s of nodes on the fly without any downtime.
+
+Distributed Storage
+In HDFS all the features are achieved via distributed storage and replication. HDFS data is stored in distributed manner across the nodes in HDFS cluster. In HDFS data is divided into blocks and is stored on the nodes present in HDFS cluster. And then replicas of each and every block are created and stored on other nodes present in the cluster. So if a single machine in the cluster gets crashed we can easily access our data from the other nodes which contain its replica.
+
+Scalability
+As HDFS stores data on multiple nodes in the cluster, when requirements increase we can scale the cluster. There is two scalability mechanism available: Vertical scalability – add more resources (CPU, Memory, Disk) on the existing nodes of the cluster. Another way is horizontal scalability – Add more machines in the cluster. The horizontal way is preferred since we can scale the cluster from 10s of nodes to 100s of nodes on the fly without any downtime.
+
+Distributed Storage
+In HDFS all the features are achieved via distributed storage and replication. HDFS data is stored in distributed manner across the nodes in HDFS cluster. In HDFS data is divided into blocks and is stored on the nodes present in HDFS cluster. And then replicas of each and every block are created and stored on other nodes present in the cluster.
+
+
+5.2. What is MapReduce?
+Hadoop MapReduce is a programming model. As it is designed for large volumes of data in parallel by dividing the work into a set of independent tasks. MapReduce is the heart of Hadoop, it moves computation close to the data. As a movement of a huge volume of data will be very costly. It allows massive scalability across hundreds or thousands of servers in a Hadoop cluster.
+
+Hence, Hadoop MapReduce is a framework for distributed processing of huge volumes of data set over a cluster of nodes. As data stores in a distributed manner in HDFS. It provides the way to Map–Reduce to perform parallel processing.
+
+5.3. What is YARN Hadoop?
+YARN – Yet Another Resource Negotiator is the resource management layer of Hadoop. In the multi-node cluster, as it becomes very complex to manage/allocate/release the resources (CPU, memory, disk). Hadoop Yarn manages the resources quite efficiently. It allocates the same on request from any application.
+
+On the master node, the ResourceManager daemon runs for the YARN then for all the slave nodes NodeManager daemon runs.
+
+6. Hadoop Daemons
+Namenode – It runs on master node for HDFS.
+Datanode – It runs on slave nodes for HDFS.
+ResourceManager – It runs on master node for Yarn.
+NodeManager – It runs on slave node for Yarn.
+
+7. How does Hadoop works?
+Till now in Hadoop training we have studied Hadoop Introduction and Hadoop architecture in detail. Now next let us summarize Apache Hadoop working step by step:
+i) Input data breaks into blocks of size 128 Mb (by default) and then moves to different nodes.
+ii) Once all the blocks of the file stored on datanodes then a user can process the data.
+iii) Then, master schedules the program (submitted by the user) on individual nodes.
+iv) Once all the nodes process the data then the output is written back to HDFS.
+
+8. Hadoop Flavors
+This section of Hadoop Tutorial talks about the various flavors of Hadoop.
+
+Apache – Vanilla flavor, as the actual code is residing in Apache repositories.
+Hortonworks – Popular distribution in the industry.
+Cloudera – It is the most popular in the industry.
+MapR – It has rewritten HDFS and its HDFS is faster as compared to others.
+IBM – Proprietary distribution is known as Big Insights.
+
+9. Hadoop Ecosystem Components
+In this section of Hadoop tutorial, we will cover Hadoop ecosystem components. Let us see what all the components form the Hadoop Eco-System:
+
+Hadoop Tutorial – Hadoop Ecosystem Components
+
+Hadoop HDFS – Distributed storage layer for Hadoop.
+Yarn Hadoop – Resource management layer introduced in Hadoop 2.x.
+Hadoop Map-Reduce – Parallel processing layer for Hadoop.
+HBase – It is a column-oriented database that runs on top of HDFS. It is a NoSQL database which does not understand the structured query. For sparse data set, it suits well.
+Hive – Apache Hive is a data warehousing infrastructure based on Hadoop and it enables easy data summarization, using SQL queries.
+Pig – It is a top-level scripting language. As we use it with Hadoop. Pig enables writing complex data processing without Java programming.
+Flume – It is a reliable system for efficiently collecting large amounts of log data from many different sources in real-time.
+Sqoop – It is a tool design to transport huge volumes of data between Hadoop and RDBMS.
+Oozie – It is a Java Web application uses to schedule Apache Hadoop jobs. It combines multiple jobs sequentially into one logical unit of work.
+Zookeeper – A centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
+Mahout – A library of scalable machine-learning algorithms, implemented on top of Apache Hadoop and using the MapReduce paradigm.
